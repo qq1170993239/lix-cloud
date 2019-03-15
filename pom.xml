@@ -13,98 +13,13 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <java.encoding>UTF-8</java.encoding>
-        <spring.version>4.3.14.RELEASE</spring.version>
-        <spring.boot.version>1.5.10.RELEASE</spring.boot.version>
-        <spring.cloud.version>Edgware.SR2</spring.cloud.version>
-        <ijep.version>6.1.0-SNAPSHOT</ijep.version>
-        <swagger.version>2.8.0</swagger.version>
-        <servlet.version>3.1.0</servlet.version>
-        <jsp.version>2.2</jsp.version>
-        <jstl.version>1.2</jstl.version>
-        <taglibs.version>1.1.2</taglibs.version>
-        <logback.version>1.1.7</logback.version>
-        <slf4j.version>1.7.21</slf4j.version>
-        <junit.version>4.12</junit.version>
-        <mybatis.version>3.4.6</mybatis.version>
-        <mybtais-spring.version>1.3.2</mybtais-spring.version>
-        <mybatis.pagehelper.version>5.1.3</mybatis.pagehelper.version>
-        <mybatis.generator.version>1.3.5</mybatis.generator.version>
-        <jsqlparser.version>1.1</jsqlparser.version>
-        <jackson.version>2.8.6</jackson.version>
-        <aspectj.version>1.8.10</aspectj.version>
-        <httpclient.version>4.5.2</httpclient.version>
-        <fastjson.version>1.2.37</fastjson.version>
-        <commons.lang.version>2.6</commons.lang.version>
-        <commons.lang3.version>3.5</commons.lang3.version>
-        <commons.beanutils.version>1.9.2</commons.beanutils.version>
-        <commons.dbcp.version>1.4</commons.dbcp.version>
-        <commons.codec.version>1.10</commons.codec.version>
-        <commons.fileupload.version>1.3.2</commons.fileupload.version>
-        <commons.io.version>2.5</commons.io.version>
-        <commons.pool2>2.0</commons.pool2>
-        <xstream.version>1.4.7</xstream.version>
-        <jpa.api.version>1.0.0.Final</jpa.api.version>
-        <validation.api.version>1.1.0.Final</validation.api.version>
-        <hibernate.validator.version>5.2.0.Final</hibernate.validator.version>
-        <mysql.connector.version>5.1.38</mysql.connector.version>
-        <ojdbc6.version>11.2.0.1.0</ojdbc6.version>
-        <hikari.version>2.7.6</hikari.version>
-        <inject.version>1</inject.version>
-        <proxool.version>0.9.1</proxool.version>
-        <ecj.version>3.12.3</ecj.version>
-        <jwt.version>3.2.0</jwt.version>
-        <jjwt.version>0.9.0</jjwt.version>
-        <activation.version>1.0.2</activation.version>
-        <poi.version>3.9</poi.version>
-        <dom4j.version>1.6.1</dom4j.version>
-        <jxls.version>1.0.6</jxls.version>
-        <itextpdf.version>5.5.10</itextpdf.version>
-        <itextpdf.asian.version>5.2.0</itextpdf.asian.version>
-        <mvel.version>2.4.0.Final</mvel.version>
-        <esper.version>5.5.0</esper.version>
-        <neo4j-ogm.version>3.0.0</neo4j-ogm.version>
-        <neo4j-java.version>1.4.3</neo4j-java.version>
-        <spring-hateoas.version>0.24.0.RELEASE</spring-hateoas.version>
-        <jersey-version>2.25.1</jersey-version>
-        <jetty.version>9.3.21.v20170918</jetty.version>
-        <spring-cloud-netflix-eureka-client.version>1.4.3.RELEASE</spring-cloud-netflix-eureka-client.version>
-        <elasticsearch.version>6.2.4</elasticsearch.version>
-
-        <skip_maven_deploy>false</skip_maven_deploy>
-        <java_source_version>1.8</java_source_version>
-        <java_target_version>1.8</java_target_version>
-        <file_encoding>UTF-8</file_encoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven_compiler_plugin_version>3.1</maven_compiler_plugin_version>
-        <maven_source_plugin_version>2.4</maven_source_plugin_version>
-        <maven_resource_plugin_version>2.7</maven_resource_plugin_version>
-        <maven_surefire_plugin_version>2.19.1</maven_surefire_plugin_version>
-        <maven_shade_plugin_version>2.4.3</maven_shade_plugin_version>
-        <maven_jar_plugin_version>2.5</maven_jar_plugin_version>
-        <maven_war_plugin_version>2.1.1</maven_war_plugin_version>
-        <maven_install_plugin_version>2.3.1</maven_install_plugin_version>
-        <maven_deploy_plugin_version>2.7</maven_deploy_plugin_version>
+        <docker.plugin.version>1.0.0</docker.plugin.version>
+        <docker.image.prefix>spring-boot-cloud</docker.image.prefix>
+        <spring.cloud.version>Dalston.SR4</spring.cloud.version>
+        <spring-boot-admin.version>1.5.4</spring-boot-admin.version>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
-
-    
     <groupId>com.lix.cloud</groupId>
     <artifactId>lix-cloud</artifactId>
     <packaging>pom</packaging>
@@ -116,12 +31,49 @@
         <module>lix-cloud-zuul</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-server</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-server-ui</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-server-ui-hystrix</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-server-ui-turbine</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-server-ui-login</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
+                <version>${spring.cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -129,12 +81,45 @@
     </dependencyManagement>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>${docker.plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>build</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                        <dockerDirectory>${project.basedir}/</dockerDirectory>
+                        <resources>
+                            <resource>
+                                <targetPath>/</targetPath>
+                                <directory>${project.build.directory}</directory>
+                                <include>${project.build.finalName}.jar</include>
+                            </resource>
+                        </resources>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
 </project>
