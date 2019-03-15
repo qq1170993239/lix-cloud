@@ -1,0 +1,70 @@
+logging:
+  level:
+    root: INFO
+
+server:
+  port: 9000
+  context-path: /api/
+  tomcat: 
+    uri-encoding: UTF-8
+
+spring:
+  http:
+    encoding:
+      force: true
+      enabled: true
+      charset: UTF-8
+    multipart:
+      max-file-size: 10MB
+  application:
+    name: service-zuul
+  session: 
+    store-type: none
+  #链路追踪
+#  zipkin:
+#    base-url: http://localhost:9998
+  #sleuth采样率，1为全采样
+  sleuth:
+    sampler:
+      percentage: 1
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  metadata-map:
+      service-consumer: /consumer
+      service-producer: /producer
+
+#熔断器
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false  #禁用超时
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+#负载均衡
+ribbon:
+  ReadTimeout: 120000
+  ConnectTimeout: 30000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  eureka:
+    enabled: true
+
+#路由配置
+zuul: 
+  ignored-services: '*'
+  servlet-path: /
+  routes:  
+    consumer:
+      path: /consumer/**
+      service-id: service-consumer
+    producer:
+      path: /producer/**
+      service-id: service-producer
