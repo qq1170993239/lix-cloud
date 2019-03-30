@@ -1,0 +1,7 @@
+server:
+  port: 9002
+spring:
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
